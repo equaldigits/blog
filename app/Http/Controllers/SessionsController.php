@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class SessionsController extends Controller
 {
-    public function __constructor()
+    public function __construct()
     {
         $this->middleware('guest', ['except' => 'destroy']);
     }
@@ -26,7 +26,7 @@ class SessionsController extends Controller
         }
 
         return redirect()->home();
-
+        
     }
 
     public function destroy()
