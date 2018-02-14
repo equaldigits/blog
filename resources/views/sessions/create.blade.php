@@ -4,7 +4,7 @@
     <div class="col-md-8">
         <h1>Ligar</h1>
 
-        <form method="POST" action="/sessions">
+        <form method="POST" action="/login">
             {{ csrf_field() }}
 
         <div class="form-group">

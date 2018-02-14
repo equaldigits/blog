@@ -21,7 +21,9 @@ class RegistrationController extends Controller
         ]);
 
         //criar e guardar o utilizador
-        $user = User::create(request(['name', 'email', 'password']));
+        $user = User::create(
+            request(['name', 'email', 'password'])
+        );
 
         //ligar ao site
         auth()->login($user);

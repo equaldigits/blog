@@ -17,11 +17,14 @@ class Post extends Model
     public function addComment($body)
     {
 
-        $this->comments()->create(compact('body'));
+        //$this->comments()->create(compact('body', 'post_id', 'user_id'));
 
-/*         Comment::create([
+
+        //hack
+       Comment::create([
             'body' => $body,
-            'post_id' => $this->id
-        ]); */
+            'post_id' => $this->id,
+            'user_id' => $this->id
+        ]);  
     }
 }
