@@ -33,6 +33,6 @@ class SessionsController extends Controller
     {
         auth()->logout();
         
-        return view()->home();
+        return redirect()->home();
     }
 }
