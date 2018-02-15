@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Carbon\Carbon;
+
 class Post extends Model
 {
     public function comments()
@@ -27,4 +29,18 @@ class Post extends Model
             'user_id' => $this->id
         ]);  
     }
+
+  //SCOPE FILTER PARA O TESTE - Erro undefined index: month
+/*    public function scopeFilter($query, $filters)
+    {
+        if ($month = $filters['month'])
+        {
+            $query->whereMonth('created_at', Carbon::parse($month)->month);
+        }
+
+        if ($year = $filters['year'])
+        {
+            $queru->whereYear('created_at', $year);
+        }
+    } */
 }
