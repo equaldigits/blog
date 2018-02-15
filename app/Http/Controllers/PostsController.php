@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post; //isto é importante
+use App\Repositories\Posts;
 
 use Carbon\Carbon;
 
@@ -20,8 +21,8 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::latest();
-/*         ->filter(['month', 'year'])
-        ->get();  */
+/*          ->filter(['month', 'year'])
+            ->get();  */
 
           if ($month = request('month')){
             $posts->whereMonth('created_at', Carbon::parse($month)->month);
